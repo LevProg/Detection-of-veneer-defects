@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>SVEZA</title>
+</head>
+<body>
+    <main>
+        <div class="scroll-container">
+            {% for i in range(5) %}
+            <div class="scroll-element" ><div  class="content" id="el-{{i}}"  value="{{ides[4-i]}}" value2="{{results[4-i]}}" onclick="showShpon(id)" style="background-image: url('data:image/jpeg;base64,{{ images[4-i] }}')" alt="image"  id="imgslot"></div></div>
+            {% endfor %}
+        </div>
+        <div id="viewer" value="0" style="background-image: url('data:image/jpeg;base64,{{images[4]}}')">
+            <div id="shpon-text">Нет дефекта</div>
+        </div>
+        <div class="vertical-flex-container"style="margin-left: calc(15% + 250px + 760px); width: 200px; height: 90%; margin-top: 3%;">
+            <div class="flex-element">
+                <form action="{{ url_for('analitics') }}">
+                    <button type="submit" class="square-button">
+                        <div class="square-button-textbox">Аналитика</div>
+                        <div class="image" style="background-image: url('static/Analytics.png');"></div>
+                    </button>
+                </form>
+            </div>
+            <div class="flex-element">
+                <form action="{{ url_for('lk') }}">
+                    <button type="submit" class="square-button">
+                        <div class="square-button-textbox" style="margin-top: 5%;">Личный кабинет</div>
+                        <div class="image" style="background-image: url('static/Face\ ID.png');"></div>
+                    </button>
+                </form>
+            </div>
+            <div class="flex-element">
+            </div>
+        </div>  
+        
+        <div class="buttons-container bottom">
+            <div class="flex-element">
+                <button type="submit" class="square-button" onclick="stop()" id="stop" style="height: 90px; width: 250px;margin-left: calc(50% - 250px / 2);">
+                    <div class="square-button-textbox" style="margin-top: 10%;">Остановка</div>
+                </button>
+            </div>
+        </div>
+        <div class="green-block">
+            <div class="flex-element">
+                <div id="myDropdown" class="dropdown-content" style="margin-top: -20%; z-index: 5;">
+                    <button type="submit" onclick="sendDefect(id)" class="dropdown-button" id="defect-1">Дефект №1</button>
+                    <button type="submit" onclick="sendDefect(id)" class="dropdown-button" id="defect-2">Дефект №2</button>
+                    <button type="submit" onclick="sendDefect(id)" class="dropdown-button" id="defect-3">Дефект №3</button>
+                    <button type="submit" onclick="sendDefect(id)" class="dropdown-button" id="defect-4">Дефект №4</button>
+                    <button type="submit" onclick="sendDefect(id)" class="dropdown-button" id="defect-5">Дефект №5</button>
+                </div>
+                <button type="submit" onclick="dropPanel()" class="dropbtn square-button rectangle-button white-button">
+                    <div class="square-button-textbox" style="margin-top: 6%;">Дефект</div>
+                </button>
+            </div>
+            <div class="flex-element">
+                <button type="submit"class="square-button rectangle-button white-button"  onclick="sendDefect('defect-0')">
+                    <div class="square-button-textbox" style="margin-top: 6%;">Без Дефекта</div>
+                </button>
+            </div>
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/socket.io.js') }}"></script>
+</body>
+</html>

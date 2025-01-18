@@ -1,0 +1,395 @@
+html{
+    height: -webkit-fill-available;
+} 
+
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+
+}
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    top: 0;
+    padding-top: 20px;
+}
+.left {
+    left: 0;
+    background-color: #ffffff;
+}
+.right {
+    right: 0;
+    background-color:#97D700CC;
+}
+.login-box{
+    position: absolute;
+    top: calc(50% - 460px / 2);
+    left: calc(50% - 460px / 2);;
+    height: 460px;
+    width: 460px;
+    z-index: 2;
+    border: 5px solid #000000;
+    background-color: #ffffff;
+    box-shadow: 8px 8px 5px rgb(0, 0, 0, .25);
+}
+.login-box h2 {
+    margin: 10% 10% 5%;
+    padding: 0;
+    color: #000000;
+    font-family: "Inter";
+    font-size: 28px;
+    line-height: 29.5px;
+}
+
+.textbox {
+    width: 80%;
+    margin-left: 10%;
+    height: 60px;
+    margin-bottom: 10%;
+}
+
+.textbox input {
+    background: #ffffff;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    color: #000000;
+    font-size: 18px;
+    border: 2px solid black;
+}
+.textbox input:hover {
+    background: #eeeeee;
+}
+.btn {
+    margin-top: 10%;
+    margin-left: 10%;
+    width: 80%;
+    height: 60px;
+    background: #97D700CC;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 28px;
+    color: #000000;
+    font-family: "Inter";
+    border-radius: 1px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #88b32a;
+}
+.logo{
+    position: absolute;
+    top: calc(50% - 100px / 2);
+    right: calc(50% + 460px / 2);;
+    left: 0px;
+    height: 100px;
+    background-size: cover;
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('static/logo.png');
+}
+header {
+    height: 70px;
+    background-color: #EEEEEE;
+    display: flex;
+    margin: -10px -10px 0px -10px;
+    flex-direction: column;
+    font-weight: 400;
+    justify-content: center;
+}
+.scroll-container{
+    background: #97D700CC;
+    width: 250px;
+    height: 100%;
+    margin: 3% 0 3% 5%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+.scroll-element{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+}
+.content{
+    position: relative;
+    width: 80%;
+    height: 80%;
+    background-size: cover;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('static/shpon/image4.png');
+    background-color: rgb(0, 0, 0, .25);
+    transition: background 0.3s;
+}
+.content:hover{
+    background-color:rgb(0, 0, 0, .40);
+}
+
+#viewer{
+    position: absolute;
+    margin-left: calc(10% + 250px);
+    margin-top: 5%;
+    height: 460px;
+    width: 760px;
+    z-index: 2;
+    border: 5px solid #000000;
+    background-color: #dadada;
+    background-size: 60%;
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('static/shpon/image4.png');
+}
+#shpon-text{
+    position: relative;
+    margin-left: 65%;
+    margin-top: 5%;
+    width: 30%;
+    height: 10%;
+    background-color: white;
+    border: 4px solid #97D700CC;
+    font-size: 21px;
+    color: #000000;
+    font-family: "Inter";
+}
+.buttons-container{
+    position: absolute;
+    margin-top: 5%;
+    margin-left: calc(15% + 250px + 760px);
+    height: 460px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.bottom{
+    flex-direction: row;
+    margin-top: 35.5%;
+    height: 200px;
+    width: 300px;
+    margin-left: calc(10% + 250px);
+}
+.flex-element{
+    flex:1 1;
+    width: 100%;
+    align-content:center;
+
+}
+.square-button{
+    display: flex;
+    justify-content: center;
+    height: 80%;
+    margin-left: calc(50% - 200px / 2);
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    background-color: #97D700CC;
+    box-shadow: 8px 8px 5px rgb(0, 0, 0, .25);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.square-button:hover{
+    background: #88b32a;
+}
+.white-button{
+    background-color: #F5F5F5;
+    transition: background 0.3s;
+}
+.white-button:hover{
+    background: rgb(187, 187, 187);
+}
+.rectangle-button{
+    height: 90px;
+    width: 200px;
+    margin-left:
+    calc((100% - 200px) / 2);
+}
+.square-button-textbox{
+    flex: 1;
+    margin-top: 12%;
+    position: absolute;
+    color: rgb(0, 0, 0);
+    font-family: "Inter";
+    text-align: center;
+    font-size: 25px;
+}
+.image{
+    position: relative;
+    margin-top: 46%;
+    width: 50%;
+    height: 50%;
+    background-size: 10%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('static/shpon/image4.png');
+}
+.green-block{
+    position: absolute;
+    margin-top: 37.5%;
+    margin-left: calc(10% + 550px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 130px;
+    width: 470px;
+    box-shadow: 8px 8px 5px rgb(0, 0, 0, .25);
+    border-radius: 10px;
+    background-color: #97D700CC;
+}
+.vertical-flex-container{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 5%;
+    height: 100%;
+    width: 28%;
+}
+.horizontal-flex-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-left: 5%;
+    height: 20%;
+    width: 100%;
+}
+.data-element{
+    border-bottom: 2px solid rgb(0, 0, 0);
+    font-family: "Inter";
+    text-align: left;
+    font-size: 23px; 
+}
+.bold{
+    font-weight: bold;
+}
+.personal-photo{
+    flex: 1;
+    background-color: #D9D9D9;
+    height: 300px;
+    width: 300px;
+    margin-left: calc(50% - 300px / 2);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('static/Face\ ID.png');
+}
+.analitics-box{
+    margin-top: 2%;
+    width: calc(10% + 760px);
+    height: 100%;
+    border: 10px solid black;
+}
+.analitics-button{
+    display: flex;
+    justify-content: center;
+    margin-left: calc(40% - 200px / 2);
+    border: 1px solid black;
+    height: 50%;
+    width: 70%;
+    background-color: #97D700CC;
+}
+.square{
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #97D700CC;
+    border: 1px solid black;
+}
+.do-square{
+    margin-left: calc(100% - 100px);
+    background-image: url('static/Done.png');
+}
+.save-square{
+    margin-top: -5%;
+    margin-left: calc(100% - 60px);
+    background-image: url('static/download.png');
+}
+#analitics-graphic{
+    margin-left: 4%;
+    height: 70%;
+    width: 85%;
+    background-size: contain;
+    background-size: 85%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+}
+.date-input{
+    border: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #97D700CC;
+    color: rgb(0, 0, 0);
+    font-family: "Inter";
+    text-align: center;
+    font-size: 21px;
+}
+.dropbtn {
+    justify-content: center;
+}
+.period-button{
+    margin-left: calc(40% - 200px / 2);
+    border: 1px solid black;
+    height: 50%;
+    width: 70%;
+    color: rgb(0, 0, 0);
+    font-family: "Inter";
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    background-color: #97D700CC;
+}
+.period-button:hover, .period-button:focus {
+    background: #88b32a;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    margin-left: -1%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-button {
+    color: rgb(0, 0, 0);
+    background-color: #97D700CC;
+    font-family: "Inter";
+    text-align: center;
+    width: 100%;
+    border: none;
+    font-size: 18px;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-button:hover {background-color: #88b32a}
+.show {display:block;}

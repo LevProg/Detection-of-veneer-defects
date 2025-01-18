@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+    {% for i in range(15) %}
+        <a>i</a>
+        <img src="data:image/png;base64,{{ images[15-i] }}" alt="Image" />
+    {% endfor %}
+    </body>
+</html>

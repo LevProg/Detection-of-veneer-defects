@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>SVEZA</title>
+</head>
+<body>
+    <main>
+        <div class="vertical-flex-container" style="margin-left: 5%; width: 60%; height: 95%;">
+            <div class="flex-element">
+                <div class="square-button-textbox bold" style="text-align: left;font-size: 32px; margin-top: 0;">Аналитика</div>
+            </div>
+            <div class="flex-element"  style="flex: 5;">
+                <div class="analitics-box" >
+                    <div class="horizontal-flex-container" >
+                        <div class="flex-element">
+                            <button onclick="dropPanel()" class="period-button dropbtn">Период</button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <button type="submit" onclick="switchAnaliticTime(id)" class="dropdown-button" id="graphic-day">День</button>
+                                <button type="submit" onclick="switchAnaliticTime(id)" class="dropdown-button" id="graphic-month">Месяц</button>
+                                <button type="submit" onclick="switchAnaliticTime(id)" class="dropdown-button" id="graphic-year">Год</button>
+                            </div>
+                        </div>
+                            <div class="flex-element">
+                                    <div class="analitics-button">
+                                        <div class="square-button-textbox" style="margin: 0.8% 0 0 -25%;">С</div>
+                                        <input class="date-input" type="date" id="start" value="2024-01-01" min="2023-01-01" max="2024-12-31" />
+                                    </div>
+                            </div>
+                            <div class="flex-element">
+                                    <div class="analitics-button">
+                                        <div class="square-button-textbox" style="margin: 0.8% 0 0 -25%;">По</div>
+                                        <input class="date-input" type="date" id="end" value="2024-01-01" min="2023-01-01" max="2024-12-31" />
+                                    </div>
+                            </div>
+                        <div class="flex-element" style="flex: 0.7;">
+                            <div class="square do-square" onclick="sentDate()" input type="button" value="do-graphic" style="background-image: url('static/Done.png');"></div>
+                        </div>
+                    </div>
+                    <div id="analitics-graphic"></div>
+                    <div class="square save-square" input type="button" value="save-graphic" style="background-image: url('static/download.png');"></div>
+                 </div>
+            </div>
+            <div class="flex-element">
+                <div class="green-block" style="position: relative; margin: 8% 0 0 0;width: calc(10% + 760px);">
+                    <div class="flex-element">
+                        <button type="submit" onclick="switchAnaliticButton(id)" class="analitic square-button rectangle-button white-button"  id="graphic-first">
+                            <div class="square-button-textbox" style="margin-top: 2%;">Дефект/<br>Без Дефекта</div>
+                        </button>
+                    </div>
+                    <div class="flex-element">
+                        <button type="submit" onclick="switchAnaliticButton(id)" class="analitic square-button rectangle-button white-button"  id="graphic-second">
+                            <div class="square-button-textbox" style="margin-top: 2%;">Погрешность<br>ИИ</div>
+                        </button>
+                    </div>
+                    <div class="flex-element">
+                        <button type="submit" onclick="switchAnaliticButton(id)" class="analitic square-button rectangle-button white-button"  id="graphic-third">
+                            <div class="square-button-textbox" style="margin-top: 0%;">Скорость<br>прохода<br>шпона</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="vertical-flex-container" style="margin-left: calc(15% + 250px + 760px); width: 200px; height: 90%; margin-top: 3%;">
+            <div class="flex-element">
+                <form action="{{ url_for('index') }}">
+                    <button type="submit" class="square-button">
+                        <div class="square-button-textbox">Главная</div>
+                        <div class="image" style="background-image: url('static/Home\ Page.png');"></div>
+                    </button>
+                </form>
+            </div>
+            <div class="flex-element">
+                <form action="{{ url_for('lk') }}">
+                    <button type="submit" class="square-button">
+                        <div class="square-button-textbox" style="margin-top: 5%;">Личный кабинет</div>
+                        <div class="image" style="background-image: url('static/Face\ ID.png');"></div>
+                    </button>
+                </form>
+            </div>
+            <div class="flex-element">
+            </div>
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
